@@ -1,0 +1,14 @@
+{% extends 'pledges/base.html' %}
+{% load i18n %}
+
+{% block content %}
+<h1>#NoAllMenPanels</h1>
+<form action="" method="POST" enctype="multipart/form-data" class="form">
+  {% csrf_token %}
+  {{form}}
+  <div class="buttons">
+    <input type="submit" value="{% trans 'Submit' %}">
+    <a class="button secondary" href="{% url 'pledges:pledge_list' %}">{% trans 'back' %}</a>
+  </div>
+</form>
+{% endblock %}

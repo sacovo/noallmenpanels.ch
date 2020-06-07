@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'site.webmanifest' %}">
+    <link
+      href="https://unpkg.com/sanitize.css"
+      rel="stylesheet"
+      />
+    <link
+      href="https://unpkg.com/sanitize.css/typography.css"
+      rel="stylesheet"
+      />
+    <link
+      href="https://unpkg.com/sanitize.css/forms.css"
+      rel="stylesheet"
+      />
+    <link rel="stylesheet" href="{% static 'base.css' %}"/>
+
+
+    <meta property="og:title" content="{{meta.title}}" />
+    <meta property="og:image" content="{{meta.image}}" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="600" />
+
+    <title>{{meta.title|default:"#AllMenPanel"}}</title>
+  </head>
+  <body>
+    <main>
+    {% block content %}
+
+    {% endblock %}
+    </main>
+
+  </body>
+</html>

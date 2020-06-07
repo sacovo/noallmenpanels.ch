@@ -1,0 +1,31 @@
+{% extends 'pledges/base.html' %}
+{% load i18n %}
+
+{% block content %}
+<h1>#NoAllMenPanels</h1>
+<section class="intro">
+  <p class="description">
+    {% blocktrans %}
+    Kurze Beschreibung
+    {% endblocktrans %}
+  </p>
+</section>
+<div class="bottom">
+  <a class="button" href="{% url 'pledges:create_pledge' %}">{% trans 'Create Pledge' %}</a>
+  <form action="" method="get" class="search">
+    <label class="sr-only" for="search">{% trans 'Search' %}</label>
+    <input type="text" id="search" name="q">
+    <input type="submit" value="{% trans 'Search' %}">
+  </form>
+</div>
+<section class="pledges">
+  {% if featured %}
+  {% include 'pledges/pledge_card.html' with pledge=featured %}
+  {% endif %}
+  {% for pledge in page.object_list %}
+  {% if pledge != featured %}
+  {% include 'pledges/pledge_card.html' %}
+  {% endif %}
+  {% endfor %}
+</section>
+{% endblock %}

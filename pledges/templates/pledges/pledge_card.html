@@ -1,0 +1,15 @@
+<article class="pledge">
+  <img src="{{pledge.image.large}}">
+  <div class="content">
+    <h2>{{pledge.first_name}} {{pledge.last_name}}</h2>
+    <p>{{pledge.description}}</p>
+    <div class="social-media">
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https://{{request.get_host}}{{request.path}}?featured={{pledge.pk}}" target="_blank">
+        Facebook
+      </a>
+      <a href="http://twitter.com/share?url=https://{{request.get_host}}{{request.path}}?featured={{pledge.pk}}" target="_blank">
+        Twitter
+      </a>
+    </div>
+  </div>
+</article>

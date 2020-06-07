@@ -1,0 +1,16 @@
+{% extends 'pledges/base.html' %}
+{% load i18n %}
+{% block content %}
+<h1>#NoAllMenPanels</h1>
+<h2>{% trans 'Bestätigung erflogreich' %}</h2>
+<h2>{% trans 'Teile deinen ... hier.' %}</h2>
+<p>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https://{{request.get_host}}{{request.path}}?featured={{pledge.pk}}" target="_blank">
+    Facebook
+  </a>
+  <a href="http://twitter.com/share?url=https://{{request.get_host}}{{request.path}}?featured={{pledge.pk}}" target="_blank">
+    Twitter
+  </a>
+</p>
+<a class="button secondary" href="{% url 'pledges:pledge_list' %}">{% trans 'back' %}</a>
+{% endblock %}

@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'django.contrib.flatpages',
+    'pledges.apps.PledgesConfig',
 ]
 
 MIDDLEWARE = [
@@ -110,9 +113,9 @@ if DEBUG:
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'de-ch'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Zurich'
 
 USE_I18N = True
 
@@ -133,13 +136,11 @@ MEDIA_ROOT = 'storage/media/'
 if DEBUG:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-EMAIL_HOST = os.environ.get('SMTP_HOST', 'localhost')
-EMAIL_PORT = int(os.environ.get('SMTP_PORT', '25'))
-
-EMAIL_USE_TLS = int(os.environ.get('SMTP_TLS', '0'))
-EMAIL_USE_SSL = int(os.environ.get('SMTP_SSL', '0'))
-
-EMAIL_HOST_USER = os.environ.get('SMTP_USER', 'user')
-EMAIL_HOST_PASSWORD = os.environ.get('SMTP_PASSWORD', 'pw')
+SITE_ID = 1
 
 DEFAULT_FROM_EMAIL = os.environ.get('FROM_EMAIL', 'webmaster@localhost')
+EMAIL_HOST = 'smtp'
+EMAIL_PORT = 25
+
+DEFAULT_FROM_EMAIL = os.environ.get("DEFAULT_FROM_EMAIL", 'webmaster@localhost')
+SERVER_EMAIL = os.environ.get("SERVER_EMAIL", 'root@localhost')

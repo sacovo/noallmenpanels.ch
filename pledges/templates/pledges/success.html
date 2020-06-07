@@ -1,0 +1,12 @@
+{% extends 'pledges/base.html' %}
+{% load i18n %}
+
+{% block content %}
+<h1>#NoAllMenPanels</h1>
+<p class="success">
+  {% blocktrans with first_name=pledge.first_name last_name=pledge.last_name %}
+  Danke {{first_name}} {{last_name}}, du erhälst jetzt dann ein E-Mail, in dem du deinen Pledge bestätigen kannst.
+  {% endblocktrans %}
+</p>
+<a href="{% url 'pledges:pledge_list' %}">{% trans 'Back' %}</a>
+{% endblock %}
