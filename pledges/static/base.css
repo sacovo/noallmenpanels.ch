@@ -15,6 +15,10 @@ body {
   background: var(--body-background);
 }
 
+a, a:visited, a:focus {
+  color: var(--body-color);
+}
+
 main {
   max-width: 1200px;
   margin: auto;
@@ -46,6 +50,82 @@ h1, h2, h3, h4, h5, h6 {
   flex-direction: column;
   justify-content: space-between;
 }
+
+.pledge > img {
+  width: 100%;
+}
+
+.pledge > .content {
+  padding: 1em 0.5em;
+}
+
+.pledge > .content > h2 {
+  margin: 0;
+}
+.pledge > .content > p {
+  margin: 0;
+  min-height: 1.5em;
+}
+
+form.form {
+  padding: 0.3rem;
+}
+
+
+form.form > label {
+  display: block;
+}
+
+.bottom{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+a.button, input[type="submit"] {
+  color: var(--body-background);
+  text-decoration: none;
+  background: var(--body-color);
+  padding: 0.3em 1.5em;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  display: inline-block;
+  border: var(--body-color) solid 4px;
+}
+
+.button.secondary {
+  background: var(--body-background);
+  color: var(--body-color);
+}
+
+.buttons {
+  margin-top: 1em;
+}
+
+form.search {
+  font-size: 0.8rem;
+  margin-top: 0.3em;
+}
+
+.sr-only {
+  display: none;
+}
+
+.intro > p {
+  max-width: 500px;
+}
+
+.success {
+  max-width: 600px;
+  font-weight: 800;
+}
+
+.social-media > a {
+  margin: 0 1em 0 0;
+}
+
 
 .pledge > img {
   width: 100%;
@@ -120,4 +200,30 @@ form.search {
 
 .social-media > a {
   margin: 0 1em 0 0;
+}
+
+.pagination {
+  display: inline-flex;
+  border-radius: 3px;
+}
+
+.pagination > *{
+  padding: 0.5em;
+}
+.pagination {
+  display: inline-flex;
+  border-radius: 3px;
+
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+
+}
+
+
+.pagination > :first-child {
+  border-left: none;
+}
+
+.pagination > *{
+  border-left: black dashed 1px;
+  padding: 0.5em;
 }

@@ -22,7 +22,7 @@ def pledge_list(request):
             Q(description__icontains=query)
         )
 
-    page = Paginator(pledges, 30).page(
+    page = Paginator(pledges, 24).page(
         int(request.GET.get('page', '1'))
     )
 
